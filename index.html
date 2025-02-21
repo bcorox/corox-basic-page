@@ -1,0 +1,382 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+
+    <!-- Title: add your Portfolio websites's title here -->
+    <title>Corox</title>
+
+    <!-- Add some coding keywords below, Ex: (javascript, yourusername, etc) -->
+    <meta
+      name="keywords"
+      content="developer, fullstack, Javascript, Angular, Java, Node, NodeJS, NestJS, HTML, CSS ,Corox, Projects "
+    />
+
+    <!-- Improve your SEO by adding a small descrption of you -->
+    <meta name="description" content="FullStack | Developer" />
+
+    <!-- Add a your png Logo to the assets folder and change the href attr accordingly  -->
+    <link rel="icon" type="image/png" href="./assets/favicon.ico" />
+
+    <!-- Add your primary-theme color for the value of content -->
+    <meta name="theme-color" content="#36d1dc" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <!-- Fill content with the URL of this portfolio you'll host -->
+    <!-- Fill content with the title of your portfolio(Recommended to use what you put in <title> tag) -->
+    <meta property="og:title" content="Bryan | Developer" />
+    <!-- Give a short description that'll show up when you/someone shares your portfolio on different platform -->
+    <meta property="og:description" content="Dev Portafilio" />
+
+    <meta property="twitter:title" content="Bryan | Developer" />
+    <!-- short description that shows up while your portfolio is shared -->
+    <!-- Fill content with the URL to the thumbnail image that you'll put in the assets folder -->
+    <!-- link tags -->
+    <link rel="preload" as="style" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+
+    <!-- FontAwesome Icons link -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <script defer src="./javascript/scrollreveal.min.js"></script>
+    <script
+      defer
+      type="text/javascript"
+      src="./javascript/scrollveal.js"
+    ></script>
+
+    <!-- Remove Google Analytics once you have your portfolio website set-up -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-122228201-4"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "UA-122228201-4");
+    </script>
+    <!-- End of Google Analytics -->
+  </head>
+  <body>
+    <!-- Hero Section -->
+    <div id="hero">
+      <section class="container">
+        <h1 class="hero-title">
+          Hi, welcome to <span class="text-color-main name">Corox</span>
+          <br />
+          A dream created by Bryan Cx
+        </h1>
+        <p class="hero-cta">
+          <a class="cta-btn cta-btn--hero" href="#about">Get in touch</a>
+        </p>
+      </section>
+      <a href="#about" class="scroll-down-link" aria-label="scroll-down">
+        <div class="scroll-down"></div
+      ></a>
+    </div>
+    <!-- /END Hero Section -->
+
+    <!-- About Section -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title">About Us</h2>
+        <div class="row about-wrapper">
+          <div class="about-wrapper__image">
+            <img
+              class="img-fluid"
+              src="./assets/pic.png"
+              alt="Profile Image"
+              width="450"
+              height="350"
+            />
+          </div>
+          <div class="about-wrapper__info">
+            <p class="about-wrapper__info-text">
+              Welcome to Corox, where innovation meets expertise. We are a passionate
+               team of full-stack developers dedicated to bringing your ideas to life.
+                With a deep love for technology and a commitment to excellence, 
+                we specialize in building robust, scalable, and cutting-edge solutions tailored to your needs.
+            </p>
+            <p class="about-wrapper__info-text">
+              At Corox, we thrive on challenges and are always exploring new 
+              technologies to stay ahead in this ever-evolving digital world. 
+              Whether it's creating seamless web applications, crafting powerful backend systems,
+               or developing feature-rich mobile apps, our goal is to deliver exceptional results that
+                drive success for our clients.
+            </p>
+            <p>Let’s connect and create something amazing together!</p>
+            <span class="about-wrapper__cta">
+              <a href="https://wa.me/+593989623188?text=" class="cta-btn cta-btn--resume">Ask for Information</a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /END About Section -->
+
+    <!--Projects Section-->
+    <section id="projects">
+      <div class="container">
+        <div class="project-wrapper">
+          <h2 class="section-title dark-blue-text">Projects</h2>
+          <p>
+            We have worked on several projects but for the privacy of the
+            companies I list some of my public projects.
+          </p>
+          <br /><br />
+          <!-- Each .row is a project -->
+          <article class="row">
+            <div class="project-wrapper__text">
+              <h3 class="project-wrapper__text-title">Cx Radios</h3>
+              <p class="project-wrapper__text-info">
+                A project developed in Angular + Firebase It was made as a hobby to learn Angular
+                and to listen to various music during our working day, then grew and
+                also integrated a part of videos. All with public streamings.
+              </p>
+              <div class="project-wrapper__text-btns">
+                <a
+                  href="https://corox.click/cxradio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="cta-btn cta-btn--hero cta-btn--projects"
+                  >See Live</a
+                >
+                <a href="https://play.google.com/store/apps/details?id=com.ec.cx_radio&hl=en-US" target="_blank" 
+                class="cta-btn cta-btn--hero cta-btn--projects"
+                  >Google Play</a
+                > 
+              </div>
+            </div>
+
+            <div class="project-wrapper__image">
+              <a href="http://cxradio.corox.click" target="_blank" rel="noopener noreferrer">
+                <div class="thumbnail rounded">
+                  <img
+                    src="./assets/player1.png"
+                    class="img-fluid"
+                    alt="Project Image"
+                    width="1366"
+                    height="767"
+                  />
+                </div>
+              </a>
+            </div>
+          </article>
+          <!-- /END Project -->
+
+          <!-- Each .row is a project -->
+          <article class="row">
+            <div class="project-wrapper__text">
+              <h3 class="project-wrapper__text-title">PredatorEC</h3>
+              <p class="project-wrapper__text-info">
+                It is an application that allows to monitor devices
+                geographically, implemented the front end in Reactjs and the
+                back end in Java. It also has an application uploaded to the
+                Google Playstore.
+              </p>
+              <div class="project-wrapper__text-btns">
+                <a
+                  href="http://www.predatorec.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="cta-btn cta-btn--hero cta-btn--projects"
+                  >See Live</a
+                >
+                <!--  <a href="#" target="_blank" class="cta-btn text-color-main"
+                  >Source Code</a
+                >-->
+              </div>
+            </div>
+
+            <div class="project-wrapper__image">
+              <a href="http://www.predatorec.com" target="_blank" rel="noopener noreferrer">
+                <div class="thumbnail rounded">
+                  <img
+                    src="./assets/predator.png"
+                    class="img-fluid"
+                    alt="Project Image"
+                    width="1366"
+                    height="767"
+                  />
+                </div>
+              </a>
+            </div>
+          </article>
+
+          <article class="row">
+            <div class="project-wrapper__text">
+              <h3 class="project-wrapper__text-title">General API Response</h3>
+              <p class="project-wrapper__text-info">
+                This project is a proposal for a NestJS backend capable of responding with data
+                 generated by known artificial intelligence engines, capable of responding to 
+                 requests from developers for testing or data for their websites. 
+                 Anyone can test it in production by following the instructions.
+              </p>
+              <div class="project-wrapper__text-btns">
+                <a
+                  href="https://github.com/bcorox/api-consulting-service"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="cta-btn cta-btn--hero cta-btn--projects"
+                  >See Repo</a
+                >
+                <!--  <a href="#" target="_blank" class="cta-btn text-color-main"
+                  >Source Code</a
+                >-->
+              </div>
+            </div>
+
+            <div class="project-wrapper__image">
+              <a href="https://github.com/bcorox/api-consulting-service" target="_blank" rel="noopener noreferrer">
+                <div class="thumbnail rounded">
+                  <img
+                    src="https://miro.medium.com/v2/resize:fit:1200/1*ou2IZVfclXplqfd6nx6Wlw.jpeg"
+                    class="img-fluid"
+                    alt="Project Image"
+                    width="1366"
+                    height="767"
+                  />
+                </div>
+              </a>
+            </div>
+          </article>
+          <!-- /END Project -->
+
+          <!-- Each .row is a project -->
+           <!--
+          <article class="row">
+            <div class="project-wrapper__text">
+              <h3 class="project-wrapper__text-title">Project Title</h3>
+              <p class="project-wrapper__text-info">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Deleniti voluptas, sit nam perspiciatis tempore aspernatur ullam
+                necessitatibus impedit repellendus vero sed ipsa eos beatae ab
+                sint saepe nostrum! Enim, perferendis.
+              </p>
+              <div class="project-wrapper__text-btns">
+                <a
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="cta-btn cta-btn--hero cta-btn--projects"
+                  >See Live</a
+                >
+                <a href="#" target="_blank" class="cta-btn text-color-main"
+                  >Source Code</a
+                >
+              </div>
+            </div>
+
+            <div class="project-wrapper__image">
+              <a href="#" target="_blank" rel="noopener noreferrer">
+                <div class="thumbnail rounded">
+                  <img
+                    src="./assets/project.png"
+                    class="img-fluid"
+                    alt="Project Image"
+                    width="1366"
+                    height="767"
+                  />
+                </div>
+              </a>
+            </div>
+          </article> -->
+          <!-- /END Project -->
+        </div>
+      </div>
+    </section>
+    <!-- End Projects Section -->
+
+    <!-- Contact Section -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <div class="contact-wrapper">
+          <p class="contact-wrapper__text">Mail me: info@corox.click !!</p>
+          <a href="https://wa.me/+593989623188?text=" class="cta-btn cta-btn--resume">Whatsapp</a>
+        </div>
+      </div>
+    </section>
+    <!-- END Contact Section -->
+
+    <!-- Footer Section -->
+    <footer class="footer">
+      <div class="container">
+        <a href="#hero" class="back-to-top" aria-label="go back to top">
+          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
+        </a>
+        <div class="social-links">
+         <!-- <a
+            href="#!"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="twitter"
+          >
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+          <a
+            href="#!"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="instagram"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a
+            href="#!"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="codepen"
+          >
+            <i class="fa-brands fa-codepen"></i>
+          </a>
+          <a
+            href="#!"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="linkedin"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>-->
+          <a
+            href="https://github.com/bcorox"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="github"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </div>
+        <hr />
+        <p class="footer__text">
+         <br />Made with &hearts; by
+        </p>
+        <a class="footer__text" href="https://corox.click/bryancx/"> Bryan Cx</a>
+      </div>
+    </footer>
+    <!-- END Footer Section -->
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="./javascript/vanilla-tilt.min.js"></script>
+    <script type="text/javascript" src="./javascript/valtilt.js"></script>
+  </body>
+</html>
