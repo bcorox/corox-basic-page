@@ -1,14 +1,66 @@
-* {
+@use "variables" as *;
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: $font-family;
 }
+
 html {
-  font-size: 62.5%;
+  font-size: 16px;
   scroll-behavior: smooth;
 }
+
 body {
-  text-align: center;
-  line-height: 1.5;
+  font-family: $font-family;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color $transition-fast;
+  
+  &:hover {
+    color: $primary;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: $primary;
+  color: white;
+  padding: $spacing-md $spacing-xl;
+  border-radius: $radius-md;
+  z-index: 9999;
+  transition: top $transition-base;
+  
+  &:focus {
+    top: $spacing-md;
+  }
+}
+
+.container {
+  width: 100%;
+  max-width: $container-max;
+  margin: 0 auto;
+  padding: 0 $spacing-lg;
 }

@@ -1,70 +1,147 @@
+@use "../base/variables" as *;
+
 .footer {
-  background-color: $dark-grey;
-  padding: 4.8rem 0;
-  &__text {
-    font-size: 1.3rem;
-    color: darken($white-color, 30%);
-    a {
-      font-size: 1.3rem;
-      color: darken($white-color, 25%);
-      transition: all 0.2s ease-in-out;
-      display: inline-block;
-      &:hover,
-      &:active {
-        color: $primary-color;
-      }
+  padding: 4rem 0 2rem;
+  background: $bg-primary-dark;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+
+  &__content {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 3rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+      text-align: center;
     }
   }
 
-  & hr {
-    margin: 1rem auto;
-    border: 0;
-    width: 50%;
-    border-top: 2px solid rgba(255, 255, 255, 0.1);
+  &__brand {
+    max-width: 300px;
+
+    @media (max-width: 768px) {
+      max-width: none;
+    }
   }
-}
 
-.social-links {
-  display: flex;
-  justify-content: center;
+  &__logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
 
-  a {
-    font-size: 3rem;
+    i {
+      color: $secondary;
+    }
+  }
+
+  &__brand p {
+    color: $text-muted-dark;
+    font-size: $font-size-sm;
+  }
+
+  &__links {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    color: $white-color;
-    width: 5rem;
-    height: 5rem;
-    margin: $default-font-size $default-font-size;
-    transition: all ease 0.2s;
-    i {
-      transition: all ease-in-out 0.2s;
+    gap: 0.75rem;
+
+    a {
+      color: $text-secondary-dark;
+      font-size: $font-size-sm;
+      transition: color $transition-fast;
+
+      &:hover {
+        color: $secondary;
+      }
     }
-    &:hover {
-      transform: scale(1.1) translateY(-2px);
-      .fa-twitter {
-        color: #00acee;
+  }
+
+  &__social {
+    display: flex;
+    gap: 1rem;
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: $bg-tertiary-dark;
+      border-radius: $radius-md;
+      color: $text-secondary-dark;
+      transition: all $transition-base;
+
+      &:hover {
+        background: $secondary;
+        color: #1a1512;
       }
-      .fa-instagram {
-        color: #c13584;
+    }
+  }
+
+  &__bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    text-align: center;
+
+    hr {
+      width: 50%;
+      margin: 0 auto 1.5rem;
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    p {
+      font-size: $font-size-sm;
+      color: $text-muted-dark;
+    }
+
+    a {
+      color: $secondary;
+      font-weight: 500;
+
+      &:hover {
+        text-decoration: underline;
       }
-      .fa-linkedin {
-        color: #4875b4;
-      }
-      .fa-codepen {
-        color: #212121;
-      }
+    }
+
+    i {
+      color: $primary;
     }
   }
 }
 
-.back-to-top i {
-  color: $white-color;
-  margin: 1rem 0 $default-font-size;
-  transition: all 200ms ease;
+.back-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: $gradient-accent;
+  border-radius: $radius-md;
+  color: #1a1512;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 30px rgba($secondary, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all $transition-base;
+  z-index: 100;
+
+  &.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
 
   &:hover {
-    transform: translateY(-2px);
+    transform: translateY(-5px);
+    color: #1a1512;
+    box-shadow: 0 0 40px rgba($secondary, 0.5);
   }
 }

@@ -1,42 +1,33 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
-h1 {
-  font-weight: 700;
+@use "variables" as *;
+
+.section-header {
+  text-align: center;
+  margin-bottom: $spacing-3xl;
 }
 
-p,
-a {
-  font-size: $default-font-size;
-}
-
-a {
-  text-decoration: none;
-}
-
-a:hover {
-  transition: all 0.3s ease-in-out;
+.section-label {
+  display: inline-block;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: $secondary;
+  margin-bottom: 0.75rem;
 }
 
 .section-title {
-  margin-bottom: 4.5rem;
-  font-size: $big-font-size;
-  text-transform: uppercase;
-  @include respond(phone) {
-    font-size: 2.8rem;
-  }
+  font-size: $font-size-4xl;
+  font-weight: 800;
+  margin-bottom: $spacing-md;
+  background: $gradient-accent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-.dark-blue-color {
-  color: $dark-blue-text;
-}
-
-.text-color-main {
-  margin-left: 1rem;
-  @include supportColorForIE11();
-
-  @include respond(phone) {
-    margin: 0;
-    background-image: none;
-    -webkit-text-fill-color: $secondary-color;
-    box-shadow: none;
-  }
+.section-description {
+  font-size: $font-size-lg;
+  color: $text-secondary-dark;
+  max-width: 600px;
+  margin: 0 auto;
 }

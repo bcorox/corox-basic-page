@@ -1,84 +1,130 @@
-#projects {
-  background-color: $light-white;
-  color: $dark-blue-text;
-  margin-top: -15rem;
-  padding-top: 15rem;
-  @include respond(tab-land) {
-    margin-top: 0;
-    padding-top: 5rem;
-  }
-  @include respond(phone) {
-    padding-bottom: 1px;
-  }
-  .project-wrapper {
-    margin-bottom: 15rem;
-    @include respond(phone) {
-      margin-bottom: 0rem;
+@use "../base/variables" as *;
+
+.projects {
+  padding: 8rem 0;
+  background: $bg-primary-dark;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
     }
-    .row {
-      margin: 0;
-      margin-bottom: 8rem;
-      @include respond(phone) {
-        margin-bottom: 4rem;
-      }
-    }
-    &__text {
+  }
+}
+
+.project-card {
+  background: rgba(20, 18, 22, 0.9);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: $radius-xl;
+  overflow: hidden;
+  transition: all $transition-base;
+
+  &:hover {
+    transform: translateY(-8px);
+    border-color: rgba($secondary, 0.4);
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba($primary, 0.2);
+  }
+
+  &__image {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16/10;
+
+    img {
       width: 100%;
-      text-align: left;
-      @include respond(tab-land) {
-        margin-bottom: 4.8rem;
-      }
-      @include respond(phone) {
-        margin-bottom: 2.5rem;
-      }
-      &-title {
-        font-weight: bold;
-        margin-bottom: 1.8rem;
-        font-size: $mid-font-size;
-
-        @include respond(phone) {
-          font-size: 2rem;
-        }
-      }
-
-      &-info {
-        margin-bottom: 1.5rem;
-      }
-
-      &-btns {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-      }
+      height: 100%;
+      object-fit: cover;
+      transition: transform $transition-slow;
     }
 
-    &__image {
-      width: 90%;
-      margin: 0 auto;
+    &:hover img {
+      transform: scale(1.05);
+    }
+  }
 
-      @include respond(tab-land) {
+  &__overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity $transition-base;
+
+    .project-card:hover & {
+      opacity: 1;
+    }
+  }
+
+  &__content {
+    padding: 1.5rem;
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: $font-size-xl;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  &__description {
+    font-size: $font-size-sm;
+    color: $text-secondary-dark;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  &__footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+
+      .btn {
         width: 100%;
-        margin: 0;
-      }
-      & .thumbnail {
-        border: none;
-        box-shadow: 8px 8px 9px 7px rgba(174, 174, 192, 0.4),
-          -5px -5px 15px 7px #ffffff;
-
-        .img-fluid {
-          width: 100%;
-          height: auto;
-          vertical-align: middle;
-          border-radius: 2px;
-        }
-        @include respond(phone) {
-          box-shadow: none;
-          border: 1px solid #d2d2d2;
-          margin-bottom: 3.2rem;
-          transform: none;
-        }
       }
     }
+  }
+}
+
+.tag {
+  padding: 0.25rem 0.75rem;
+  background: $bg-tertiary-dark;
+  border: 1px solid rgba($secondary, 0.3);
+  border-radius: $radius-full;
+  font-size: $font-size-xs;
+  font-weight: 500;
+  color: $secondary;
+}
+
+.project-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: $gradient-accent;
+  border-radius: 50%;
+  font-size: 1.5rem;
+  color: #1a1512;
+  transform: scale(0.8);
+  transition: transform $transition-base;
+
+  .project-card:hover & {
+    transform: scale(1);
   }
 }
