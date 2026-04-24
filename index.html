@@ -292,52 +292,79 @@
             </p>
           </div>
 
-          <div class="projects__grid">
-            <article class="project-card reveal">
-              <div class="project-card__image">
-                <img
-                  src="./assets/market.jpg"
-                  alt="La Purita Market"
-                  width="600"
-                  height="400"
-                  loading="lazy"
-                />
-                <div class="project-card__overlay">
-                  <a
-                    href="https://lapurita.corox.click/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="project-link"
-                    aria-label="Ver La Purita Market"
-                  >
-                    <i class="fa-solid fa-external-link-alt"></i>
-                  </a>
-                </div>
-              </div>
-              <div class="project-card__content">
-                <div class="project-card__tags">
-                  <span class="tag">Next.js</span>
-                  <span class="tag">E-commerce</span>
-                  <span class="tag">React</span>
-                </div>
-                <h3 class="project-card__title">La Purita Market</h3>
-                <p class="project-card__description">
-                  E-commerce desarrollado en Next.js con base de datos
-                  personalizable para tus productos. Recibe notificaciones con
-                  cada compra y gestiona tu negocio fácilmente.
-                </p>
-                <div class="project-card__footer">
-                  <a
-                    href="https://lapurita.corox.click/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="btn btn--small btn--outline"
-                  >
-                    Ver Proyecto <i class="fa-solid fa-arrow-right"></i>
-                  </a>
-                </div>
-              </div>
-            </article>
+           <div class="projects__grid">
+             <article class="project-card reveal">
+               <div class="project-card__image">
+                 <img src="./assets/nico-assitance.png" alt="Nico Asistente AI" width="600" height="400" loading="lazy" />
+                 <div class="project-card__overlay">
+                   <a href="https://corox.click/nico" target="_blank" rel="noopener noreferrer" class="project-link" aria-label="Ver Nico Asistente AI">
+                     <i class="fa-solid fa-external-link-alt"></i>
+                   </a>
+                 </div>
+               </div>
+               <div class="project-card__content">
+                 <div class="project-card__tags">
+                   <span class="tag">AI</span>
+                   <span class="tag">Asistente Virtual</span>
+                   <span class="tag">Widget</span>
+                 </div>
+                 <h3 class="project-card__title">Nico Asistente AI</h3>
+                 <p class="project-card__description">
+                   Asistente virtual inteligente para negocios, disponible como widget embeddable.
+                   Ofrece atención al cliente 24/7, generación de leads y soporte personalizable.
+                 </p>
+                 <div class="project-card__footer">
+                   <a href="https://corox.click/nico" target="_blank" rel="noopener noreferrer" class="btn btn--small btn--outline">
+                     Ver Proyecto <i class="fa-solid fa-arrow-right"></i>
+                   </a>
+                 </div>
+               </div>
+             </article>
+             <article class="project-card reveal">
+               <div class="project-card__image">
+                 <img
+                   src="./assets/market.jpg"
+                   alt="La Purita Market"
+                   width="600"
+                   height="400"
+                   loading="lazy"
+                 />
+                 <div class="project-card__overlay">
+                   <a
+                     href="https://lapurita.corox.click/"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     class="project-link"
+                     aria-label="Ver La Purita Market"
+                   >
+                     <i class="fa-solid fa-external-link-alt"></i>
+                   </a>
+                 </div>
+               </div>
+               <div class="project-card__content">
+                 <div class="project-card__tags">
+                   <span class="tag">Next.js</span>
+                   <span class="tag">E-commerce</span>
+                   <span class="tag">React</span>
+                 </div>
+                 <h3 class="project-card__title">La Purita Market</h3>
+                 <p class="project-card__description">
+                   E-commerce desarrollado en Next.js con base de datos
+                   personalizable para tus productos. Recibe notificaciones con
+                   cada compra y gestiona tu negocio fácilmente.
+                 </p>
+                 <div class="project-card__footer">
+                   <a
+                     href="https://lapurita.corox.click/"
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     class="btn btn--small btn--outline"
+                   >
+                     Ver Proyecto <i class="fa-solid fa-arrow-right"></i>
+                   </a>
+                 </div>
+               </div>
+             </article>
 
             <article class="project-card reveal">
               <div class="project-card__image">
@@ -491,8 +518,8 @@
                   </a>
                 </div>
               </div>
-            </article>
-          </div>
+              </article>
+           </div>
         </div>
       </section>
 
@@ -643,6 +670,18 @@
         </div>
       </div>
     </footer>
+    <div id="nico-widget-container"></div>
+    <script src="nico/nico-widget.umd.js"></script>
+    <script>
+      window.createNicoWidget("nico-widget-container", {
+        businessId: "7b60030b-09b2-483a-a255-7f73d3b4ad55",
+        channelId: "d3035016-3c0c-4553-80e1-da9743cf44d0",
+        apiUrl: "http://192.168.1.10:3000/api/v1/widget",
+        primaryColor: "#a52a2a",
+        finalGradient: "#d4af37",
+        
+      });
+    </script>
 
     <a href="#hero" class="back-to-top" aria-label="Volver arriba">
       <i class="fa-solid fa-arrow-up"></i>

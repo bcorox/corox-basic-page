@@ -1221,7 +1221,7 @@ ul {
 .back-to-top {
   position: fixed;
   bottom: 2rem;
-  right: 2rem;
+  right: 6rem;
   display: flex;
   align-items: center;
   justify-content: center;
