@@ -21342,7 +21342,7 @@ const ck = ($) => {
   return /* @__PURE__ */ X.jsx(
     "img",
     {
-      src: "https://firebasestorage.googleapis.com/v0/b/corox-radios.appspot.com/o/asistant.jpg?alt=media&token=2d9f0f1c-0e6f-4887-bd90-bf8fc2f6e5f8",
+      src: "https://corox.click/images/asistant.jpg",
       alt: "Assistant avatar",
       width: k,
       height: k,
