@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Documentation to integrate Nico - Your intelligent assistant into your website."
+    />
+    <title>Nico | Integration Documentation</title>
+    <link rel="icon" href="../assets/images/favicon.ico" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+    <style>
+      .docs-container {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 40px 20px;
+      }
+      .docs-header {
+        text-align: center;
+        padding: 60px 0 40px;
+      }
+      .docs-header h1 {
+        font-size: 2.5rem;
+        color: #a52a2a;
+        margin-bottom: 15px;
+      }
+      .docs-header p {
+        font-size: 1.2rem;
+        color: #666;
+      }
+      .step-card {
+        background: white;
+        border-radius: 16px;
+        padding: 30px;
+        margin-bottom: 30px;
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+      }
+      .step-card h2 {
+        font-size: 1.5rem;
+        color: #a52a2a;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .step-card h2 .step-num {
+        width: 36px;
+        height: 36px;
+        background: #a52a2a;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1rem;
+        font-weight: 700;
+      }
+      .step-card p {
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 20px;
+      }
+      .code-block {
+        background: #1a1a1a;
+        border-radius: 12px;
+        padding: 20px;
+        overflow-x: auto;
+        margin: 15px 0;
+      }
+      .code-block pre {
+        margin: 0;
+        font-family: "Consolas", "Monaco", monospace;
+        font-size: 0.9rem;
+        color: #e0e0e0;
+        white-space: pre-wrap;
+      }
+      .code-block code {
+        color: #d4af37;
+      }
+      .config-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+      .config-table th,
+      .config-table td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+      }
+      .config-table th {
+        background: #faf8f6;
+        color: #a52a2a;
+        font-weight: 600;
+      }
+      .config-table td:first-child {
+        font-family: monospace;
+        color: #a52a2a;
+      }
+      .note {
+        background: #fff9e6;
+        border-left: 4px solid #d4af37;
+        padding: 15px 20px;
+        margin: 20px 0;
+        border-radius: 0 8px 8px 0;
+      }
+      .note strong {
+        color: #a52a2a;
+      }
+      .btn-download {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 28px;
+        background: #a52a2a;
+        color: white;
+        text-decoration: none;
+        border-radius: 50px;
+        font-weight: 600;
+        margin: 10px 0;
+        transition: all 0.3s ease;
+      }
+      .btn-download:hover {
+        background: #8b2222;
+        transform: translateY(-2px);
+      }
+      .back-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #666;
+        text-decoration: none;
+        font-weight: 500;
+        margin-bottom: 30px;
+        transition: color 0.3s ease;
+      }
+      .back-link:hover {
+        color: #a52a2a;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="lang-switch">
+      <a href="../index.html">ES</a>
+      <a href="index.html" class="active">EN</a>
+    </nav>
+
+    <div class="docs-container">
+      <a href="../index.html" class="back-link">← Back to home</a>
+
+      <div class="docs-header">
+        <h1>Integration Documentation</h1>
+        <p>Learn how to add Nico to your website in just a few minutes</p>
+      </div>
+
+      <div class="step-card">
+        <h2><span class="step-num">1</span> Get Your Credentials</h2>
+        <p>
+          After completing your payment with Corox, you'll receive an email with
+          your credentials:
+        </p>
+        <ul>
+          <li style="margin: 10px 0; color: #555">
+            <strong>businessId:</strong> Your unique business identifier
+          </li>
+          <li style="margin: 10px 0; color: #555">
+            <strong>channelId:</strong> Configured channel ID
+          </li>
+        </ul>
+        <div class="note">
+          <strong>Note:</strong> If you haven't received your credentials,
+          contact
+          <a href="mailto:info@corox.click" style="color: #a52a2a"
+            >info@corox.click</a
+          >
+        </div>
+      </div>
+
+      <div class="step-card">
+        <h2><span class="step-num">2</span> Download the Files</h2>
+        <p>Download the widget files and add them to your project:</p>
+        <ul style="margin: 15px 0; padding-left: 20px; color: #555">
+          <li><strong>nico-widget.umd.js</strong> - Main script</li>
+          <li><strong>style.css</strong> - Widget styles</li>
+        </ul>
+        <p style="margin-top: 15px; color: #555">
+          Copy these files from the <code>/nico</code> folder to your server or
+          CDN.
+        </p>
+      </div>
+
+      <div class="step-card">
+        <h2><span class="step-num">3</span> Add the Code to Your HTML</h2>
+        <p>
+          Paste this code in your HTML page, before the closing &lt;/body&gt;
+          tag:
+        </p>
+        <div class="code-block">
+          <pre>&lt;!-- 1. Include the files --&gt;
+&lt;script src="path/to/nico-widget.umd.js"&gt;&lt;/script&gt;
+&lt;link rel="stylesheet" href="path/to/style.css" /&gt;
+
+&lt;!-- 2. Widget container --&gt;
+&lt;div id="nico-widget-container"&gt;&lt;/div&gt;
+
+&lt;!-- 3. Initialize Nico --&gt;
+&lt;script&gt;
+  window.createNicoWidget("nico-widget-container", {
+    <span style="color: #50fa7b;">businessId</span>: <span style="color: #f1fa8c;">"YOUR_BUSINESS_ID"</span>,
+    <span style="color: #50fa7b;">channelId</span>: <span style="color: #f1fa8c;">"YOUR_CHANNEL_ID"</span>,
+    <span style="color: #50fa7b;">apiUrl</span>: <span style="color: #f1fa8c;">"https://api.corox.click/api/v1/widget"</span>,
+    <span style="color: #50fa7b;">primaryColor</span>: <span style="color: #f1fa8c;">"#a52a2a"</span>
+  });
+&lt;/script&gt;</pre>
+        </div>
+        <div class="note">
+          <strong>Important:</strong> Replace <code>YOUR_BUSINESS_ID</code> and
+          <code>YOUR_CHANNEL_ID</code> with the values you received via email.
+        </div>
+      </div>
+
+      <div class="step-card">
+        <h2><span class="step-num">4</span> Customize (Optional)</h2>
+        <p>You can customize the widget appearance with these options:</p>
+        <table class="config-table">
+          <thead>
+            <tr>
+              <th>Option</th>
+              <th>Type</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>position</td>
+              <td>string</td>
+              <td>
+                Position: <code>"bottom-right"</code> or
+                <code>"bottom-left"</code>
+              </td>
+            </tr>
+            <tr>
+              <td>title</td>
+              <td>string</td>
+              <td>Chat title (e.g., "Nico - Assistant")</td>
+            </tr>
+            <tr>
+              <td>welcomeMessage</td>
+              <td>string</td>
+              <td>Initial welcome message</td>
+            </tr>
+            <tr>
+              <td>primaryColor</td>
+              <td>string</td>
+              <td>Primary color in HEX format</td>
+            </tr>
+            <tr>
+              <td>finalGradient</td>
+              <td>string</td>
+              <td>Final gradient color (for accents)</td>
+            </tr>
+          </tbody>
+        </table>
+        <p style="margin-top: 15px; color: #555">Example with customization:</p>
+        <div class="code-block">
+          <pre>window.createNicoWidget("nico-widget-container", {
+  businessId: "YOUR_BUSINESS_ID",
+  channelId: "YOUR_CHANNEL_ID", 
+  apiUrl: "https://api.corox.click/api/v1/widget",
+  position: <span style="color: #f1fa8c;">"bottom-left"</span>,
+  title: <span style="color: #f1fa8c;">"👨‍🍳 Nico - Your Virtual Chef"</span>,
+  welcomeMessage: <span style="color: #f1fa8c;">"Hi! I'm Nico, what would you like to order today?"</span>,
+  primaryColor: <span style="color: #f1fa8c;">"#e67e22"</span>,
+  finalGradient: <span style="color: #f1fa8c;">"#f39c12"</span>
+});</pre>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <h2><span class="step-num">5</span> Custom LLM Provider</h2>
+        <p>
+          If you already have your own Large Language Model (LLM) provider such
+          as OpenAI, Anthropic, or a local model, you can easily integrate it
+          with Nico. This allows you to maintain full control over your models,
+          data, and costs.
+        </p>
+        <div class="note">
+          <strong>Configuration:</strong> To integrate a custom provider, please
+          contact our technical team to enable the communication gateway in your
+          Nico instance.
+        </div>
+      </div>
+
+      <div class="step-card">
+        <h2>Need Help?</h2>
+        <p>If you have issues with the integration, feel free to contact us:</p>
+        <div style="margin-top: 15px">
+          <a
+            href="https://wa.me/593989623188?text=Hi%2C%20I%20have%20a%20question%20about%20Nico%20integration"
+            class="btn-download"
+            style="background: #25d366"
+            target="_blank"
+            rel="noopener"
+          >
+            WhatsApp
+          </a>
+          <a
+            href="mailto:info@corox.click?subject=Help%20with%20Nico%20integration"
+            class="btn-download"
+            style="background: #a52a2a"
+          >
+            Email
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>
+            Nico by
+            <a href="https://corox.click" target="_blank" rel="noopener"
+              >Corox</a
+            >
+          </h4>
+          <p>Transforming customer service with artificial intelligence.</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          © 2026 Nico by
+          <a href="https://corox.click" target="_blank" rel="noopener">Corox</a
+          >. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

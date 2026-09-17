@@ -1,0 +1,10 @@
+# Enable RewriteEngine
+RewriteEngine On
+
+# Allow existing files or directories to be served
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Redirect all other requests to index.html
+RewriteRule ^ index.html [L]

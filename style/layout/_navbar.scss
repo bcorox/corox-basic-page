@@ -1,0 +1,223 @@
+@use "../base/variables" as *;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: $navbar-height;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  z-index: 1000;
+  transition: background $transition-base;
+
+  [data-theme="light"] & {
+    background: rgba(250, 248, 245, 0.9);
+    border-bottom-color: rgba(0, 0, 0, 0.06);
+  }
+
+  &.scrolled {
+    background: rgba(10, 10, 10, 0.95);
+  }
+
+  &.hidden {
+    transform: translateY(-100%);
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: $font-size-xl;
+    font-weight: 700;
+    color: $text-primary-dark;
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+
+    @media (max-width: 768px) {
+      position: absolute;
+      top: $navbar-height;
+      left: 0;
+      right: 0;
+      flex-direction: column;
+      gap: 0;
+      background: $bg-secondary-dark;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-10px);
+      transition: all $transition-base;
+
+      &.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+
+      li {
+        width: 100%;
+      }
+
+      a {
+        display: block;
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      }
+    }
+
+    a {
+      font-size: $font-size-sm;
+      font-weight: 500;
+      color: $text-secondary-dark;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: $gradient-accent;
+        transition: width $transition-base;
+      }
+
+      &:hover {
+        color: $text-primary-dark;
+
+        &::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &.active .hamburger {
+      background: transparent;
+
+      &::before {
+        transform: translateY(0) rotate(45deg);
+      }
+
+      &::after {
+        transform: translateY(0) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.logo-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: $gradient-accent;
+  border-radius: $radius-md;
+  color: #1a1512;
+}
+
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: $bg-tertiary-dark;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: $radius-md;
+  color: $text-primary-dark;
+  cursor: pointer;
+  transition: all $transition-base;
+
+  &:hover {
+    background: $secondary;
+    border-color: $secondary;
+    color: #1a1512;
+  }
+}
+
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: $bg-tertiary-dark;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: $radius-md;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  color: $text-primary-dark;
+  transition: all $transition-base;
+
+  &:hover {
+    background: $secondary;
+    border-color: $secondary;
+    color: #1a1512;
+  }
+}
+
+.lang-code {
+  font-size: $font-size-xs;
+}
+
+.hamburger {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: $text-primary-dark;
+  position: relative;
+  transition: background $transition-base;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: $text-primary-dark;
+    transition: transform $transition-base;
+  }
+
+  &::before {
+    top: -8px;
+  }
+
+  &::after {
+    bottom: -8px;
+  }
+}
